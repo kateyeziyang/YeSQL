@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <!-- website title -->
+        <title>YeSQL Article Search</title>
+        <!-- for better cellphone view -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- style sheet -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css')}}" type="text/css">
+        {% block style %} {% endblock %}
+    </head>
+
+    <body>
+        <!-- top navigation bar -->
+        <div class="topnav">
+            <div>
+                <a class="items" href="{{ url_for('home') }}">Home</a>
+                <a class="items" href="{{ url_for('wiki') }}">Wiki</a>
+                <a class="items" href="{{ url_for('ranking_page') }}">Trending</a>
+                <a class="items" href="{{ url_for('journal_page') }}">Journals</a>
+            </div>
+            <div class="topnav-right">
+
+                <a class="items" id="username" href="{{ url_for('login') }}">◎ login</a>
+            </div>
+        </div>
+
+                <script>
+            $.get("/user", function(data, status) {
+                console.log(data.username)
+                if (typeof data.username !== "undefined") {
+                    console.log(data)
+                    $('#username').attr('href', "{{ url_for('profile')}}")
+                    $('#username').html(data.username)
+                }
+            })
+                </script>
+        {% block content %}
+
+        {% endblock %}
+    </body>
+
+</html>

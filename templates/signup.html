@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="login_heading">
+    <h1>Sign Up</h1>
+</div>
+
+<div class="signinpage">
+    <div class="row">
+        <div class="card">
+            <form action="signup" method="post">
+                <p>Username <input type="text" name="username"></p>
+                <p>Password <input type="password" name="passwd"></p>
+                {% with errors = get_flashed_messages(category_filter=["error"]) %}
+                {% if errors %}
+                    {% for msg in errors %}
+                    <font color="red">{{ msg }}</font>
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
+                <p><button class = "search_button">Register !</button></p>
+
+                {% with success = get_flashed_messages(category_filter=["success"]) %}
+                {% if success %}
+                    {% with msg = success[0] %}
+                    <script charset="utf-8">
+                        alert("{{ msg }}")
+                        window.location.href = "{{ url_for('login') }}"
+                    </script>
+                    {% endwith %}
+                {% endif %}
+                {% endwith %}
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
