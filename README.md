@@ -1,5 +1,5 @@
 # yesql_app
-Web Journal Recommender. FA19 CS411 project of group YeSQL
+Web Journal Recommender. Fall 19 Database project of group YeSQL
 
 ## Deployment Instructions
 
