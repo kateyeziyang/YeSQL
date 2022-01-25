@@ -1,5 +1,8 @@
 # yesql_app
-Web Journal Recommender. Fall 19 Database project of group YeSQL
+Web Journal Recommender. Fall 19 group course project.
+This a journal searching web application based on Python Flask and MySQL. The journal data are provided by course staff.
+Visitors of the web applications can search articles and add those articles to their favorite lists if they have signed in.
+The application supports REST API and **fuzzy search**.
 
 ## Deployment Instructions
 
