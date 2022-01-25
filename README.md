@@ -7,6 +7,9 @@ Visitors of the web applications can search articles and add those articles to t
 
 The application supports REST API and **fuzzy search**.
 
+![](screenshot1.jpg)
+![](screenshot2.jpg)
+
 ## Deployment Instructions
 
 First make sure that you have python3 and pip3 installed.
